@@ -18,7 +18,7 @@ function App() {
         Change color
       </button>
       {/* <Swatch color={'red'} /> */}
-      <MemoedSwatch color={color} />
+      <MemoedSwatch params={{ color }} />
     </div>
   );
 }

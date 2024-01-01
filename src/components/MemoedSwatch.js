@@ -1,9 +1,16 @@
 import { memo } from 'react';
 
-const MemoedSwatch = ({ color }) => {
-  console.log(`Memoed swatch rendered ${color}`);
+const MemoedSwatch = ({ params }) => {
+  console.log(`Memoed swatch rendered ${params.color}`);
   return (
-    <div style={{ width: 75, height: 75, margin: 2, backgroundColor: color }} />
+    <div
+      style={{
+        width: 75,
+        height: 75,
+        margin: 2,
+        backgroundColor: params.color,
+      }}
+    />
   );
 };
 
