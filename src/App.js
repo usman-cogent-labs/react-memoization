@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import './App.css';
 import Swatch from './components/Swatch';
 import MemoedSwatch from './components/MemoedSwatch';
@@ -11,9 +11,9 @@ function App() {
 
   const memoedParams = useMemo(() => ({ color }), [color]);
 
-  const handleSwatchClick = () => {
+  const handleSwatchClick = useCallback(() => {
     console.log('swatch clicked');
-  };
+  }, []);
 
   return (
     <div className='App'>
