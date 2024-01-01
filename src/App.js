@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Swatch from './components/Swatch';
+import MemoedSwatch from './components/MemoedSwatch';
 
 function App() {
   const [appRenderIndex, setAppRenderIndex] = useState(0);
@@ -12,7 +13,8 @@ function App() {
       <button onClick={() => setAppRenderIndex(appRenderIndex + 1)}>
         Re-render App
       </button>
-      <Swatch color={'red'} />
+      {/* <Swatch color={'red'} /> */}
+      <MemoedSwatch color={'red'} />
     </div>
   );
 }
