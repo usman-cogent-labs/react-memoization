@@ -11,6 +11,10 @@ function App() {
 
   const memoedParams = useMemo(() => ({ color }), [color]);
 
+  const handleSwatchClick = () => {
+    console.log('swatch clicked');
+  };
+
   return (
     <div className='App'>
       <button onClick={() => setAppRenderIndex(appRenderIndex + 1)}>
@@ -20,7 +24,7 @@ function App() {
         Change color
       </button>
       {/* <Swatch color={'red'} /> */}
-      <MemoedSwatch params={memoedParams} />
+      <MemoedSwatch params={memoedParams} onClick={handleSwatchClick} />
     </div>
   );
 }

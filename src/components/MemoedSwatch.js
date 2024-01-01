@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-const MemoedSwatch = ({ params }) => {
+const MemoedSwatch = ({ params, onClick }) => {
   console.log(`Memoed swatch rendered ${params.color}`);
   return (
     <div
@@ -10,6 +10,7 @@ const MemoedSwatch = ({ params }) => {
         margin: 2,
         backgroundColor: params.color,
       }}
+      onClick={onClick}
     />
   );
 };
