@@ -4,6 +4,7 @@ import Swatch from './components/Swatch';
 import MemoedSwatch from './components/MemoedSwatch';
 
 function App() {
+  const [color, setColor] = useState('red');
   const [appRenderIndex, setAppRenderIndex] = useState(0);
 
   console.log(`App rendered ${appRenderIndex}`);
@@ -13,8 +14,11 @@ function App() {
       <button onClick={() => setAppRenderIndex(appRenderIndex + 1)}>
         Re-render App
       </button>
+      <button onClick={() => setColor(color === 'red' ? 'blue' : 'red')}>
+        Change color
+      </button>
       {/* <Swatch color={'red'} /> */}
-      <MemoedSwatch color={'red'} />
+      <MemoedSwatch color={color} />
     </div>
   );
 }
