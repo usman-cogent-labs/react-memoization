@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import './App.css';
 import Swatch from './components/Swatch';
 import MemoedSwatch from './components/MemoedSwatch';
@@ -9,6 +9,8 @@ function App() {
 
   console.log(`App rendered ${appRenderIndex}`);
 
+  const memoedParams = useMemo(() => ({ color }), [color]);
+
   return (
     <div className='App'>
       <button onClick={() => setAppRenderIndex(appRenderIndex + 1)}>
@@ -18,7 +20,7 @@ function App() {
         Change color
       </button>
       {/* <Swatch color={'red'} /> */}
-      <MemoedSwatch params={{ color }} />
+      <MemoedSwatch params={memoedParams} />
     </div>
   );
 }
